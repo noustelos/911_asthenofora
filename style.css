@@ -288,14 +288,27 @@ h1, h2, h3 {
    ========================================= */
 .quality-panel {
     background: var(--bg-light);
-    padding: 40px;
+    padding: 50px 40px; /* Λίγο περισσότερο ύψος */
     border-radius: 20px;
-    border-left: 8px solid var(--primary-blue);
+    border-top: 5px solid var(--primary-blue); /* Από αριστερά, το πήγαμε πάνω για συμμετρία */
+    text-align: center; /* Κεντράρισμα περιεχομένου */
+}
+
+.quality-text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quality-text p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
 }
 
 .quality-list {
     list-style: none;
-    margin: 25px 0;
+    margin: 30px auto;
+    display: inline-block; /* Για να κεντραριστεί η λίστα ως μπλοκ */
+    text-align: left; /* Αλλά τα κείμενα μέσα να ξεκινούν από αριστερά */
 }
 
 .quality-list li {
@@ -303,19 +316,28 @@ h1, h2, h3 {
     font-size: 1.1rem;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+}
+
+.quality-list li span {
+    color: var(--secondary-blue);
+    font-weight: bold;
 }
 
 .response-badge {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 25px;
     background: var(--primary-blue);
     color: white;
     border-radius: 8px;
     font-weight: 700;
+    margin-top: 10px;
 }
 
-.faq-container { max-width: 850px; margin: 0 auto; }
+.faq-container { 
+    max-width: 850px; 
+    margin: 0 auto; 
+}
 
 .faq-card {
     background: var(--white);
@@ -324,7 +346,6 @@ h1, h2, h3 {
     margin-bottom: 20px;
     border-left: 5px solid var(--secondary-blue);
 }
-
 /* =========================================
    7. FOOTER & MAP
    ========================================= */
@@ -400,4 +421,100 @@ h1, h2, h3 {
 .share-btn { 
     background: #e1f5fe; color: var(--secondary-blue); border: none; 
     padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: 600;
+}
+/* Στυλ για το όνομα της εταιρείας μέσα στα κείμενα *//* Στυλ για το Brand Name ως Link Κλήσης */
+.brand-red-link {
+    color: var(--accent-red) !important;
+    font-weight: 800;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline;
+}
+
+.brand-red-link:hover {
+    color: var(--primary-blue) !important;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* =========================================
+   9. MISSION STATEMENT & BRANDING
+   ========================================= */
+.mission-statement {
+    padding: 60px 0;
+    background-color: var(--white);
+}
+
+.mission-panel {
+    text-align: center;
+    max-width: 950px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    line-height: 1.8;
+    /* Η κόκκινη γραμμή στη βάση για "Ήρεμη Δύναμη" */
+    border-bottom: 4px solid var(--accent-red);
+}
+
+.mission-panel p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Στυλ για το Brand Name ως Link Κλήσης */
+.brand-red-link {
+    color: var(--accent-red) !important;
+    font-weight: 800;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline;
+}
+
+.brand-red-link:hover {
+    color: var(--primary-blue) !important;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Language Switcher */
+.lang-switch { 
+    color: var(--accent-red); 
+    font-weight: bold; 
+    font-size: 0.9rem; 
+}
+
+.lang-switch a { 
+    color: var(--text-dark); 
+    text-decoration: none; 
+}
+
+.lang-switch .active { 
+    color: var(--accent-red); 
+}
+
+/* Social & Share Buttons */
+.social-links { 
+    display: flex; 
+    gap: 20px; 
+    align-items: center; 
+    margin-top: 25px; 
+}
+
+.share-btn { 
+    background: #e1f5fe; 
+    color: var(--secondary-blue); 
+    border: none; 
+    padding: 8px 15px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.share-btn:hover {
+    background: var(--secondary-blue);
+    color: white;
 }
