@@ -1,0 +1,380 @@
+/* =========================================
+   1. CUSTOM VARIABLES & RESET
+   ========================================= */
+:root {
+    --primary-blue: #0B3C5D;
+    --secondary-blue: #1F6FA9;
+    --accent-red: #E10600;
+    --bg-light: #F7F9FB;
+    --text-dark: #1A1A1A;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 { 
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 700; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* =========================================
+   2. STICKY HEADER
+   ========================================= */
+.sticky-header {
+    height: 75px;
+    position: sticky;
+    top: 0;
+    background: var(--white);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo { 
+    font-size: 1.6rem; 
+    color: var(--primary-blue); 
+    text-decoration: none; 
+    font-weight: 700; 
+}
+
+.logo span { 
+    color: var(--accent-red); 
+}
+
+.desktop-nav { 
+    display: flex; 
+    align-items: center; 
+    gap: 25px; 
+}
+
+.desktop-nav a { 
+    text-decoration: none; 
+    color: var(--text-dark); 
+    font-weight: 600; 
+    transition: var(--transition); 
+}
+
+.desktop-nav a:hover { 
+    color: var(--secondary-blue); 
+}
+
+.nav-call-btn {
+    background: var(--accent-red);
+    color: var(--white) !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.nav-call-btn:hover {
+    background: #b30500 !important;
+    transform: translateY(-2px);
+}
+/* =========================================
+   3. HERO SECTION (ΤΕΛΙΚΟ & ΟΛΟΚΛΗΡΩΜΕΝΟ)
+   ========================================= */
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 40vh; /* Ισορροπημένο ύψος */
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    text-align: left;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 70% center; /* Μετακίνηση φωτό 10% δεξιά */
+    background-repeat: no-repeat;
+    transition: background-image 1.5s ease-in-out, transform 8s linear;
+    z-index: 1;
+}
+
+.zoom-effect { 
+    transform: scale(1.1); 
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Πολύ ελαφρύ σβήσιμο για να φαίνονται οι διασώστες */
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0.95) 15%, 
+        rgba(255,255,255,0.3) 45%, 
+        rgba(255,255,255,0) 70%
+    );
+    z-index: 2;
+}
+
+.hero-container-rel {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+}
+
+.hero-content {
+    max-width: 580px; 
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+    /* Κατέβασμα 5% για να μην κρύβει τα πρόσωπα */
+    padding-top: 15%; 
+}
+
+/* 24 Ώρες Badge με Κόκκινα Γράμματα */
+.top-badge {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--accent-red);
+    border: 2px solid var(--accent-red);
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero h1 { 
+    font-size: clamp(32px, 5vw, 52px); 
+    line-height: 1.1; 
+    margin-bottom: 20px; 
+    color: var(--text-dark);
+    text-align: left;
+}
+
+/* Ενοποιημένο κείμενο 1 + 2 */
+.hero-description {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #1A1A1A;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.hero-description span {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--secondary-blue);
+}
+
+/* Κουμπί ΚΛΗΣΗ (3) */
+.btn-main-cta {
+    display: inline-block;
+    background: var(--accent-red);
+    color: var(--white);
+    padding: 16px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(225, 6, 0, 0.3);
+    transition: var(--transition);
+}
+
+.btn-main-cta:hover {
+    transform: translateY(-3px);
+    background: #b30500;
+}
+
+/* --- Mobile Fixes --- */
+@media (max-width: 768px) {
+    .hero { text-align: center; min-height: 75vh; }
+    .hero::before { background: rgba(255,255,255,0.85); }
+    .hero-content { margin: 0 auto; padding-top: 10%; }
+    .hero h1, .hero-description { text-align: center; }
+}
+/* =========================================
+   4. SECTIONS & PANELS
+   ========================================= */
+.section { 
+    padding: 100px 0; 
+}
+
+.section-light { 
+    background-color: var(--bg-light); 
+    border-top: 1px solid #ebf0f3; 
+}
+
+.section-white { 
+    background-color: var(--white); 
+}
+
+.section-title { 
+    text-align: center; 
+    font-size: 2.2rem; 
+    margin-bottom: 50px; 
+    color: var(--primary-blue); 
+}
+
+/* =========================================
+   5. GRID & CARDS
+   ========================================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    border: 1px solid #eee;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(11, 60, 93, 0.1);
+}
+
+.card-highlight {
+    border: 2px solid var(--accent-red);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.card-icon { font-size: 2rem; }
+
+/* =========================================
+   6. QUALITY & FAQ
+   ========================================= */
+.quality-panel {
+    background: var(--bg-light);
+    padding: 40px;
+    border-radius: 20px;
+    border-left: 8px solid var(--primary-blue);
+}
+
+.quality-list {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.quality-list li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.response-badge {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--primary-blue);
+    color: white;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.faq-container { max-width: 850px; margin: 0 auto; }
+
+.faq-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--secondary-blue);
+}
+
+/* =========================================
+   7. FOOTER & MAP
+   ========================================= */
+.footer-panel { padding: 80px 0 120px 0; }
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.contact-item {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+.contact-item a { color: var(--accent-red); font-weight: 700; text-decoration: none; }
+
+/* =========================================
+   8. MOBILE CALL BAR & RESPONSIVE
+   ========================================= */
+.mobile-call-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background: var(--accent-red);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.mobile-call-bar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .desktop-nav { display: none; }
+    .mobile-call-bar { display: flex; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .section { padding: 60px 0; }
+    .hero { text-align: center; min-height: 70vh; }
+    .hero::before { background: rgba(255,255,255,0.85); }
+    .hero-content { margin: 0 auto; }
+    body { padding-bottom: 70px; }
+}
