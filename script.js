@@ -56,3 +56,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+// Share Button Functionality
+const shareBtn = document.getElementById('shareButton');
+if (shareBtn) {
+    shareBtn.addEventListener('click', () => {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Asthenofora24h',
+                text: 'Private Ambulance Services 24/7',
+                url: window.location.href
+            }).catch(console.error);
+        } else {
+            alert('Sharing is not supported on this browser. You can copy the URL manually.');
+        }
+    });
+}
