@@ -380,6 +380,7 @@ h1, h2, h3 {
     align-items: center;
     justify-content: center;
     z-index: 2000;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 }
 
 .mobile-call-bar a {
@@ -397,48 +398,13 @@ h1, h2, h3 {
     .hero { text-align: center; min-height: 70vh; }
     .hero::before { background: rgba(255,255,255,0.85); }
     .hero-content { margin: 0 auto; }
-    body { padding-bottom: 70px; }
-}
-/* Mission Panel */
-.mission-panel {
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto 50px auto;
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-.mission-panel p { margin-bottom: 20px; font-size: 1.1rem; color: #444; }
-
-/* Language Switcher */
-.lang-switch { color: var(--accent-red); font-weight: bold; font-size: 0.9rem; }
-.lang-switch a { color: var(--text-dark); text-decoration: none; }
-.lang-switch .active { color: var(--accent-red); }
-
-/* Social & Share */
-.social-links { display: flex; gap: 20px; align-items: center; margin-top: 25px; }
-.share-btn { 
-    background: #e1f5fe; color: var(--secondary-blue); border: none; 
-    padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: 600;
-}
-/* Στυλ για το όνομα της εταιρείας μέσα στα κείμενα *//* Στυλ για το Brand Name ως Link Κλήσης */
-.brand-red-link {
-    color: var(--accent-red) !important;
-    font-weight: 800;
-    text-decoration: none;
-    transition: var(--transition);
-    display: inline;
-}
-
-.brand-red-link:hover {
-    color: var(--primary-blue) !important;
-    text-decoration: underline;
-    cursor: pointer;
+    
+    /* ΠΡΟΣΘΗΚΗ: Δίνει χώρο στο τέλος του site για να φαίνεται η υπογραφή πάνω από την μπάρα */
+    body { padding-bottom: 90px; } 
 }
 
 /* =========================================
-   9. MISSION STATEMENT & BRANDING
+   9. MISSION, BRANDING & FOOTER EXTRAS
    ========================================= */
 .mission-statement {
     padding: 60px 0;
@@ -454,7 +420,6 @@ h1, h2, h3 {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     line-height: 1.8;
-    /* Η κόκκινη γραμμή στη βάση για "Ήρεμη Δύναμη" */
     border-bottom: 4px solid var(--accent-red);
 }
 
@@ -476,45 +441,42 @@ h1, h2, h3 {
 .brand-red-link:hover {
     color: var(--primary-blue) !important;
     text-decoration: underline;
-    cursor: pointer;
 }
 
-/* Language Switcher */
-.lang-switch { 
-    color: var(--accent-red); 
-    font-weight: bold; 
-    font-size: 0.9rem; 
-}
-
-.lang-switch a { 
-    color: var(--text-dark); 
-    text-decoration: none; 
-}
-
-.lang-switch .active { 
-    color: var(--accent-red); 
-}
-
-/* Social & Share Buttons */
-.social-links { 
-    display: flex; 
-    gap: 20px; 
-    align-items: center; 
-    margin-top: 25px; 
-}
-
-.share-btn { 
-    background: #e1f5fe; 
-    color: var(--secondary-blue); 
-    border: none; 
-    padding: 8px 15px; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    font-weight: 600;
+/* Footer Call Link (Το τηλέφωνο πάνω από τον χάρτη) */
+.footer-call-link {
+    color: var(--accent-red) !important;
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-decoration: none;
     transition: var(--transition);
 }
 
-.share-btn:hover {
-    background: var(--secondary-blue);
-    color: white;
+/* Language Switcher */
+.lang-switch { color: var(--accent-red); font-weight: bold; font-size: 0.9rem; }
+.lang-switch a { color: var(--text-dark); text-decoration: none; }
+.lang-switch .active { color: var(--accent-red); }
+
+/* Social & Share */
+.social-links { display: flex; gap: 20px; align-items: center; margin-top: 25px; }
+.share-btn { 
+    background: #e1f5fe; color: var(--secondary-blue); border: none; 
+    padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: 600;
+    transition: var(--transition);
+}
+.share-btn:hover { background: var(--secondary-blue); color: white; }
+
+/* ΥΠΟΓΡΑΦΗ: Copyright Bar */
+.copyright-bar {
+    background-color: #052134;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 25px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright-bar strong {
+    color: var(--white);
+    font-weight: 600;
 }
