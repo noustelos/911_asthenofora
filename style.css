@@ -29,6 +29,11 @@ body {
     overflow-x: hidden;
 }
 
+html,
+body {
+    max-width: 100%;
+}
+
 h1, h2, h3 { 
     font-family: 'Poppins', sans-serif; 
     font-weight: 700; 
@@ -549,4 +554,124 @@ section {
     display: none;
   }
 
+}
+
+/* =========================================
+   MOBILE-FIRST HARDENING
+   ========================================= */
+.grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+
+.card,
+.faq-card,
+.mission-panel,
+.quality-panel {
+    overflow-wrap: anywhere;
+}
+
+.footer-map-box iframe {
+    display: block;
+}
+
+.mobile-call-bar {
+    height: 64px;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.mobile-call-bar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 0 12px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: min(1200px, calc(100% - 32px));
+        padding: 0;
+    }
+
+    section {
+        padding: 56px 0;
+    }
+
+    .hero {
+        min-height: min(78svh, 700px);
+    }
+
+    .hero-content {
+        padding-top: 28px;
+    }
+
+    .hero h1 {
+        font-size: clamp(28px, 8vw, 40px);
+    }
+
+    .hero-description {
+        font-size: clamp(1rem, 3.9vw, 1.1rem);
+    }
+
+    .section-title {
+        font-size: clamp(1.55rem, 6vw, 2rem);
+        margin-bottom: 34px;
+    }
+
+    .grid {
+        gap: 18px;
+    }
+
+    .card {
+        padding: 24px 18px;
+    }
+
+    .quality-panel,
+    .mission-panel {
+        padding: 26px 18px;
+    }
+
+    .quality-list li {
+        align-items: flex-start;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .contact-item {
+        align-items: flex-start;
+    }
+
+    body {
+        padding-bottom: calc(84px + env(safe-area-inset-bottom));
+    }
+}
+
+@media (max-width: 480px) {
+    .sticky-header {
+        height: 68px;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .top-badge {
+        font-size: 0.78rem;
+        padding: 5px 12px;
+    }
+
+    .mobile-call-bar a {
+        font-size: 1rem;
+    }
+
+    .phone-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
