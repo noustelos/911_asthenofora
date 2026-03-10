@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://asthenofora24h.gr/sitemap.xml
